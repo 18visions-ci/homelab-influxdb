@@ -21,6 +21,6 @@
 
 - name: Enable and start influxdb2
   systemd:
-    name: influxdb2
+    name: influxdb
     enabled: yes
     state: started
