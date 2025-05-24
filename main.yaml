@@ -6,10 +6,10 @@
   become_user: root
   vars:
     influxdb_admin_user: "admin"
-    influxdb_admin_password: "{{ influxdb_admin_pw }}"
+    influxdb_admin_password: "{{ lookup('env', 'influxdb_admin_pw') }}"
     influxdb_org: "homelab"
     influxdb_bucket: "esp32_data"
-    influxdb_token: "{{ influxdb_tkn }}"
+    influxdb_token: "{{ lookup('env', 'influxdb_tkn') }}"
     influxdb_retention: "17520h"
     influxdb_version: "3.0.3"
 
