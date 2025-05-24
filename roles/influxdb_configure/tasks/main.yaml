@@ -1,0 +1,23 @@
+---
+- name: Wait for InfluxDB to become responsive
+  uri:
+    url: http://localhost:8086/health
+    method: GET
+    status_code: 200
+  register: result
+  until: result.status == 200
+  retries: 10
+  delay: 3
+
+- name: Initialize InfluxDB with org, bucket, token, and retention policy
+  command: >
+    influx setup
+    --username {{ influxdb_admin_user }}
+    --password {{ influxdb_admin_password }}
+    --org {{ influxdb_org }}
+    --bucket {{ influxdb_bucket }}
+    --retention {{ influxdb_retention }}
+    --token {{ influxdb_token }}
+    --force
+  args:
+    creates: /var/lib/influxdb2/configs

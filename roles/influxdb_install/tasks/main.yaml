@@ -1,0 +1,22 @@
+---
+- name: Add InfluxData APT repository
+  apt_repository:
+    repo: "deb https://repos.influxdata.com/ubuntu jammy stable"
+    state: present
+
+- name: Add InfluxData GPG key
+  apt_key:
+    url: https://repos.influxdata.com/influxdata-archive.key
+    state: present
+
+- name: Install InfluxDB
+  apt:
+    name: "influxdb2={{ influxdb_version }}"
+    update_cache: yes
+    state: present
+
+- name: Enable and start InfluxDB
+  systemd:
+    name: influxdb
+    enabled: yes
+    state: started
