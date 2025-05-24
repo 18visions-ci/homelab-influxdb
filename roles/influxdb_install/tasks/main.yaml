@@ -1,7 +1,7 @@
 ---
 - name: Add InfluxData GPG key
   apt_key:
-    url: https://repos.influxdata.com/influxdata-archive_compat.key
+    url: https://repos.influxdata.com/influxdata-archive.key
     state: present
 
 - name: Add InfluxData APT repository
@@ -13,14 +13,14 @@
   apt:
     update_cache: yes
 
-- name: Install InfluxDB
+- name: Install influxdb2
   apt:
-    name: "influxdb"
+    name: "influxdb2"
     update_cache: yes
     state: present
 
-- name: Enable and start InfluxDB
+- name: Enable and start influxdb2
   systemd:
-    name: influxdb
+    name: influxdb2
     enabled: yes
     state: started
