@@ -12,12 +12,12 @@
 - name: Initialize InfluxDB with org, bucket, token, and retention policy
   command: >
     influx setup
-    --username {{ influxdb_admin_user }}
-    --password {{ influxdb_admin_password }}
-    --org {{ influxdb_org }}
-    --bucket {{ influxdb_bucket }}
-    --retention {{ influxdb_retention }}
-    --token {{ influxdb_token }}
+    --username {{ influxdb_admin_user }} \
+    --password {{ influxdb_admin_password }} \
+    --org {{ influxdb_org }} \
+    --bucket {{ influxdb_bucket }} \
+    --retention {{ influxdb_retention }} \
+    --token {{ influxdb_token }} \
     --force
   args:
     creates: /var/lib/influxdb2/configs
