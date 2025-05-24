@@ -11,7 +11,7 @@
 
 - name: Initialize InfluxDB with org, bucket, token, and retention policy
   command: >
-    influx setup
+    influx setup \
     --username {{ influxdb_admin_user }} \
     --password {{ influxdb_admin_password }} \
     --org {{ influxdb_org }} \
