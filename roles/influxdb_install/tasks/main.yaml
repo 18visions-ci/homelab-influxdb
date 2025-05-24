@@ -15,7 +15,7 @@
 
 - name: Install InfluxDB
   apt:
-    name: "influxdb2"
+    name: "influxdb"
     update_cache: yes
     state: present
 
