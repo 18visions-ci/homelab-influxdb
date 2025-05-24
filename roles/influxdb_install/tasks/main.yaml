@@ -9,9 +9,13 @@
     url: https://repos.influxdata.com/influxdata-archive.key
     state: present
 
+- name: Ensure APT cache is updated
+  apt:
+    update_cache: yes
+
 - name: Install InfluxDB
   apt:
-    name: "influxdb2={{ influxdb_version }}"
+    name: "influxdb2"
     update_cache: yes
     state: present
 
