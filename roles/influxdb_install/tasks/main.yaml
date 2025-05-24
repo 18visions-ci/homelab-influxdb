@@ -6,7 +6,7 @@
 
 - name: Add InfluxData GPG key
   apt_key:
-    url: https://repos.influxdata.com/influxdata-archive.key
+    url: https://repos.influxdata.com/influxdata-archive_compat.key
     state: present
 
 - name: Ensure APT cache is updated
