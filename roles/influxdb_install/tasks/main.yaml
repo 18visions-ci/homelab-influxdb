@@ -1,7 +1,7 @@
 ---
 - name: Add InfluxData APT repository
   apt_repository:
-    repo: "deb https://repos.influxdata.com/ubuntu jammy stable"
+    repo: "deb https://repos.influxdata.com/debian stable main"
     state: present
 
 - name: Add InfluxData GPG key
