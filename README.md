@@ -28,7 +28,7 @@ This repository contains Ansible playbooks and roles for installing and configur
    ```
    Replace <your_inventory> with your Ansible inventory file.
 
-Variables
+### Variables
 You can override the following variables in your inventory or via extra vars:
 
 influxdb_admin: Admin username (default: admin)
